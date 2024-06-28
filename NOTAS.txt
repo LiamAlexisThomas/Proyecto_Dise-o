@@ -1,0 +1,11 @@
+1CLIENTE: ID, nombre, apellido, fecha nacimiento, dni, numero de telefono
+
+PROYECTO: ID, material, diseñador, confirmacion, fecha 
+
+DISEÑADOR: ID, nombre, apellido, fecha nacimiento, numero de telefono, email
+
+MATERIAL: ID, tipo, nombre, cantidad, precio por unidad
+
+CONTRATO: ID, id proyecto, nombre y apellido de cliente y diseñador
+
+PAGO: ID, cuenta, cantidad, fecha limite, cuotas
