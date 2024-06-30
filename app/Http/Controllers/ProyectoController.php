@@ -18,8 +18,6 @@ class ProyectoController extends Controller
 
     public function grabar(Request $request){
         $request->validate([
-            'material_id' =>'required|exists:contratos,id',
-            'diseñador_id' =>'required|exists:contratos,id',
             'confirmacion' =>'required|boolean',
             'fechaProy' =>'required|date',
             'lugar' =>'required|string|min:5'
@@ -27,8 +25,6 @@ class ProyectoController extends Controller
 
         $proyecto = new proyecto();
 
-        $proyecto->material_id = $request->material_id;
-        $proyecto->diseñador_id = $request->diseñador_id;
         $proyecto->confirmacion = $request->confirmacion;
         $proyecto->fechaProy = $request->fechaProy;
         $proyecto->lugar = $request->lugar;
@@ -43,8 +39,6 @@ class ProyectoController extends Controller
     }
 
     public function actualizar(Request $request, proyecto $proyecto){
-        $proyecto->material_id = $request->material_id;
-        $proyecto->diseñador_id = $request->diseñador_id;
         $proyecto->confirmacion = $request->confirmacion;
         $proyecto->fechaProy = $request->fechaProy;
         $proyecto->lugar = $request->lugar;
@@ -57,7 +51,7 @@ class ProyectoController extends Controller
         $proyecto = proyecto::findOrFail($id);
         $proyecto->contratos()->delete();
         $proyecto->delete();
-        return redirect()->route('proyectos.index')->with('success', 'proyecto eliminado correctamente');
+        return redirect()->route('proyectos.index')->with('success', 'Proyecto eliminado correctamente');
     }
 
     public function mostrar(proyecto $proyecto){

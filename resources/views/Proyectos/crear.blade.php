@@ -1,7 +1,7 @@
 @extends('plantilla')
 
-@section('titulo', 'Nuevo material')
+@section('titulo', 'Nuevo proyecto')
 
 @section('contenido')
-    @include('materials._form')
+    @include('proyectos._form')
 @endsection

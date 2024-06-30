@@ -15,7 +15,7 @@
 
     <div class="form-group">
         <label for="cantidad">Cantidad</label>
-        <input type="cantidad" name="cantidad" id="cantidad" class="form-control" value="{{ old('cantidad', isset($material) ? $material->cantidad : '') }}" required>
+        <input type="text" name="cantidad" id="cantidad" class="form-control" value="{{ old('cantidad', isset($material) ? $material->cantidad : '') }}" required>
     </div>
 
     <div class="form-group">

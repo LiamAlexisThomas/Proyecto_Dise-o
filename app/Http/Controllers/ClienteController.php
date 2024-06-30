@@ -20,9 +20,9 @@ class ClienteController extends Controller
     public function grabar(Request $request){
         $request->validate([
             'nombre' =>'required|string|max:200',
-            'dni' =>'required|integer|min:8|unique:clientes',
+            'dni' =>'required|integer|min:8',
             'direccion' =>'required|string|min:5',
-            'telefono' =>'required|integer|min:9',
+            'telefono' =>'required|string|min:9',
             'fechaNac' =>'required|date',
         ]);
 
@@ -49,7 +49,7 @@ class ClienteController extends Controller
             'nombre' =>'required|string|max:200',
             'dni' =>'required|integer|min:8',
             'direccion' =>'required|string|min:5',
-            'telefono' =>'required|integer|min:9',
+            'telefono' =>'required|string|min:9',
             'fechaNac' =>'required|date',
         ]);
 

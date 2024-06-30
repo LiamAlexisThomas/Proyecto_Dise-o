@@ -5,7 +5,7 @@
 @section('contenido')
     <div class="card">
         <div class="card-body">
-            <p class="card-title">{{ $diseñador->nombre }}</p>
+            <p class="card-title"><strong>Nombre: </strong>{{ $diseñador->nombre }}</p>
             <p class="card-text"><strong>Email:</strong> {{ $diseñador->email }}</p>
             <p class="card-text"><strong>Telefono:</strong> {{ $diseñador->telefono }}</p>
             <p class="card-text"><strong>Fecha de nacimiento:</strong> {{ $diseñador->fechaNac }}</p>

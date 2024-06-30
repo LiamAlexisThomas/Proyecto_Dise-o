@@ -17,8 +17,7 @@
 
     <table border="1">
         <tr>
-            <th>ID MATERIAL</th>
-            <th>ID DISEÑADOR</th>
+            <th>ID</th>
             <th>CONFIRMACION</th>
             <th>FECHA</th>
             <th>LUGAR</th>
@@ -26,8 +25,7 @@
         </tr>
         @foreach ($proyectos as $proyecto)
             <tr>
-                <td>{{$proyecto->material_id}}</td>
-                <td>{{$proyecto->diseñador_id}}</td>
+                <td>{{$proyecto->id}}</td>
                 @if ($proyecto->confirmacion == 1)
                     <td>Si</td>
                 @else

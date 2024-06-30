@@ -34,31 +34,40 @@ class MaterialController extends Controller
 
         $material->save();
 
-        return to_route('materials.index')->with('mensaje','Material grabado correctamente.');
+        return to_route('materials.index')->with('success','Material grabado correctamente.');
     }
 
-    public function editar(material $material){
+    public function editar($id){
+        $material = material::findOrFail($id);
         return view('materials.editar', compact('material'));
     }
 
-    public function actualizar(Request $request, material $material){
+    public function actualizar(Request $request, $id){
+        $request->validate([
+            'nombre' =>'required|string|min:5',
+            'descripcion' =>'required|string|min:5',
+            'cantidad' =>'required|numeric',
+            'precioUnid' =>'required|numeric'
+        ]);
+
+        $material = material::findOrFail($id);
         $material->nombre = $request->nombre;
         $material->descripcion = $request->descripcion;
         $material->cantidad = $request->cantidad;
         $material->precioUnid = $request->precioUnid;
 
         $material->update();
-        return redirect()->route('materials.index')->with('mensaje', 'Material actualizado correctamente');
+        return redirect()->route('materials.index')->with('success', 'Material actualizado correctamente');
     }
 
     public function eliminar($id){
         $material = material::findOrFail($id);
-        $material->proyectos()->delete();
         $material->delete();
-        return redirect()->route('materials.index')->with('success', 'material eliminado correctamente');
+        return redirect()->route('materials.index')->with('success', 'Material eliminado correctamente');
     }
 
-    public function mostrar(material $material){
+    public function mostrar($id){
+        $material = material::findOrFail($id);
         return view('materials.mostrar', compact('material'));
     }
 }

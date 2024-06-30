@@ -5,10 +5,10 @@
 @section('contenido')
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">{{ $proyecto->nombre }}</h5>
-            <p class="card-text"><strong>ID Material:</strong> {{ $proyecto->material_id }}</p>
-            <p class="card-text"><strong>ID Diseñador:</strong> {{ $proyecto->diseñador_id }}</p>
+            <p class="card-title"><strong>ID: </strong>{{ $proyecto->id }}</p>
             <p class="card-text"><strong>Confirmacion:</strong> {{ $proyecto->confirmacion }}</p>
+            <p class="card-text"><strong>Fecha:</strong> {{ $proyecto->fechaProy }}</p>
+            <p class="card-text"><strong>Lugar:</strong> {{ $proyecto->lugar }}</p>
         </div>
     </div>
 

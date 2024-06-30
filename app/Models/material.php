@@ -7,9 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class material extends Model
 {
-    public function proyectos()
-    {
-        return $this->hasMany(proyecto::class, 'material_id');
-    }
     use HasFactory;
 }

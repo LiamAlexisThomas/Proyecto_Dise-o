@@ -9,7 +9,7 @@ class diseñador extends Model
 {
     public function contratos()
     {
-        return $this->hasMany(proyecto::class, 'diseñador_id');
+        return $this->hasMany(contrato::class, 'diseñador_id');
     }
     use HasFactory;
 }

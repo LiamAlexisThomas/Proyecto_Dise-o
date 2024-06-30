@@ -20,7 +20,7 @@
 
     <div class="form-group">
         <label for="fechaNac">Fecha de nacimiento</label>
-        <input type="text" name="fechaNac" id="fechaNac" class="form-control" value="{{ old('fechaNac', isset($diseñador) ? $diseñador->fechaNac : '') }}" required>
+        <input type="date" name="fechaNac" id="fechaNac" class="form-control" value="{{ old('fechaNac', isset($diseñador) ? $diseñador->fechaNac : '') }}" required>
     </div>
     
     <button type="submit" class="btn btn-primary">Guardar</button>

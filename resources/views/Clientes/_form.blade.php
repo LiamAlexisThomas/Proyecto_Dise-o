@@ -15,7 +15,7 @@
 
     <div class="form-group">
         <label for="direccion">Direccion</label>
-        <input type="direccion" name="direccion" id="direccion" class="form-control" value="{{ old('direccion', isset($cliente) ? $cliente->direccion : '') }}" required>
+        <input type="address" name="direccion" id="direccion" class="form-control" value="{{ old('direccion', isset($cliente) ? $cliente->direccion : '') }}" required>
     </div>
 
     <div class="form-group">

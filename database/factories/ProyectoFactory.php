@@ -19,8 +19,6 @@ class ProyectoFactory extends Factory
     public function definition()
     {
         return [
-            'material_id' =>material::all()->random()->id,
-            'diseñador_id' =>diseñador::all()->random()->id,
             'confirmacion' => fake()->boolean(),
             'fechaProy' => fake()->date(),
             'lugar' => fake()->name(),

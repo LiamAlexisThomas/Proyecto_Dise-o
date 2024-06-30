@@ -10,7 +10,7 @@
 
     <div class="form-group">
         <label for="fechaLim">Fecha limite</label>
-        <input type="text" name="fechaLim" id="fechaLim" class="form-control" value="{{ old('fechaLim', isset($pago) ? $pago->fechaLim : '') }}" required>
+        <input type="date" name="fechaLim" id="fechaLim" class="form-control" value="{{ old('fechaLim', isset($pago) ? $pago->fechaLim : '') }}" required>
     </div>
 
     <div class="form-group">
