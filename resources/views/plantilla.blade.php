@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <title>@yield('titulo')</title>
-    <style>
+    {{-- <style>
         body {
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
@@ -214,10 +215,13 @@
                 width: calc(100% - 10px);
             }
         }
-    </style>
+    </style> --}}
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    @yield('contenido')
+    <main class="container">
+
+        @yield('contenido')
+    </main>
 </body>
 </html>

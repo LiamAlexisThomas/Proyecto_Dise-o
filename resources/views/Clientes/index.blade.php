@@ -21,7 +21,7 @@
     <main>
         <h2>Lista de clientes</h2>
         <a href="{{url('/clientes/crear')}}" class="btn btn-primary"><button style="margin-left: 1022px; width: 150px">Agregar cliente</button></a>
-        <table>
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -55,6 +55,9 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="d-flex">
+            {!! $clientes->links() !!}
+        </div>
     </main>
     <footer>
         <p>liamthomas@epet12smandes.edu.ar &copy; Todos los derechos reservados.</p>

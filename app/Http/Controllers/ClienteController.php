@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ClienteController extends Controller
 {
     public function index(){
-        $clientes = cliente::all();
+        $clientes = cliente::orderBy("created_at","asc")->paginate(5);
 
         return view('clientes.index', ['clientes' => $clientes]);
     }
