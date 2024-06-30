@@ -31,7 +31,15 @@
                 <td>{{$material->descripcion}}</td>
                 <td>{{$material->cantidad}}</td>
                 <td>{{$material->precioUnid}}</td>
-                <td><a href="{{route('materials.editar', $material)}}" class="btn btn-primary">Editar</a></td>
+                <td>
+                    <a href="{{ route('materials.mostrar', $material->id) }}" class="btn btn-info">Ver</a>
+                    <a href="{{route('materials.editar', $material->id)}}" class="btn btn-primary">Editar</a>
+                    <form action="{{ route('materials.eliminar', $material->id) }}" method="POST" style="display: inline-block;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este material?')">Eliminar</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </table>

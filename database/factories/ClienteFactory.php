@@ -20,7 +20,7 @@ class ClienteFactory extends Factory
             'nombre' => fake('es_ES') -> name(),
             'dni' => fake()->unique()->numerify('########'),
             'direccion' => fake('es_ES') -> address(),
-            'telefono' => fake()->numerify('##########'),
+            'telefono' => fake()->phoneNumber(),
             'fechaNac' => fake()->date(),
         ];
     }

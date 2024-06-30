@@ -18,7 +18,7 @@ class MaterialFactory extends Factory
     {
         return [
             'nombre' =>fake('es_ES')->name(),
-            'descripcion' =>fake()->text(),
+            'descripcion' =>fake()->text(50),
             'cantidad' =>fake()->numerify('####'),
             'precioUnid' =>fake()->numerify('####'),
         ];

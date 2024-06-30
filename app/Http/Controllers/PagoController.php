@@ -53,6 +53,10 @@ class PagoController extends Controller
 
     public function eliminar(pago $pago){
         $pago->delete();
-        return redirect()->route('pagos.index')->with('mensaje', 'Pago eliminado correctamente');
+        return redirect()->route('pagos.index')->with('success', 'pago eliminado correctamente');
+    }
+
+    public function mostrar(pago $pago){
+        return view('pagos.mostrar', compact('pago'));
     }
 }

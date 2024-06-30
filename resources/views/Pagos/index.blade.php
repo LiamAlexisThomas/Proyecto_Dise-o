@@ -29,7 +29,15 @@
                 <td>{{$pago->fechaLim}}</td>
                 <td>{{$pago->monto}}</td>
                 <td>{{$pago->tipo}}</td>
-                <td><a href="{{route('pagos.editar', $pago)}}" class="btn btn-primary">Editar</a></td>
+                <td>
+                    <a href="{{ route('pagos.mostrar', $pago->id) }}" class="btn btn-info">Ver</a>
+                    <a href="{{route('pagos.editar', $pago->id)}}" class="btn btn-primary">Editar</a>
+                    <form action="{{ route('pagos.eliminar', $pago->id) }}" method="POST" style="display: inline-block;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este pago?')">Eliminar</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </table>

@@ -51,8 +51,14 @@ class DiseñadorController extends Controller
         return redirect()->route('diseñadors.index')->with('mensaje', 'Diseñador actualizado correctamente');
     }
     
-    public function eliminar(diseñador $diseñador){
+    public function eliminar($id){
+        $diseñador = diseñador::findOrFail($id);
+        $diseñador->contratos()->delete();
         $diseñador->delete();
-        return redirect()->route('diseñadors.index')->with('mensaje', 'Diseñador eliminado correctamente');
+        return redirect()->route('diseñadors.index')->with('success', 'diseñador eliminado correctamente');
+    }
+
+    public function mostrar(diseñador $diseñador){
+        return view('diseñadors.mostrar', compact('diseñador'));
     }
 }

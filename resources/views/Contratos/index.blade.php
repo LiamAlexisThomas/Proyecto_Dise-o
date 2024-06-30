@@ -27,7 +27,15 @@
                 <td>{{ $contrato->cliente_id}}</td>
                 <td>{{ $contrato->diseñador_id}}</td>
                 <td>{{ $contrato->proyecto_id}}</td>
-                <td><a href="{{route('contratos.editar', $contrato)}}" class="btn btn-primary">Editar</a></td>
+                <td>
+                    <a href="{{ route('contratos.mostrar', $contrato->id) }}" class="btn btn-info">Ver</a>
+                    <a href="{{route('contratos.editar', $contrato->id)}}" class="btn btn-primary">Editar</a>
+                    <form action="{{ route('contratos.eliminar', $contrato->id) }}" method="POST" style="display: inline-block;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este contrato?')">Eliminar</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </table>

@@ -31,7 +31,15 @@
                 <td>{{$diseñador->email}}</td>
                 <td>{{$diseñador->telefono}}</td>
                 <td>{{$diseñador->fechaNac}}</td>
-                <td><a href="{{route('diseñadors.editar', $diseñador)}}" class="btn btn-primary">Editar</a></td>
+                <td>
+                    <a href="{{ route('diseñadors.mostrar', $diseñador->id) }}" class="btn btn-info">Ver</a>
+                    <a href="{{route('diseñadors.editar', $diseñador->id)}}" class="btn btn-primary">Editar</a>
+                    <form action="{{ route('diseñadors.eliminar', $diseñador->id) }}" method="POST" style="display: inline-block;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este diseñador?')">Eliminar</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </table>

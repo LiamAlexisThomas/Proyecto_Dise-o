@@ -20,7 +20,7 @@ class ContratoController extends Controller
         $diseñadors = diseñador::all();
         $proyectos = proyecto::all();
 
-        return view('contratos.crear', ['clientes' => $clientes, 'diseñadors' => $diseñadors, 'proyectos' => $proyectos]);
+        return view('contratos.crear', compact('clientes', 'diseñadors', 'proyectos'));
     }
 
     public function grabar(Request $request){
@@ -55,8 +55,13 @@ class ContratoController extends Controller
         return redirect()->route('contratos.index')->with('mensaje','Contrato actualizado correctamente.');
     }
 
-    public function eliminar(contrato $contrato){
+    public function eliminar($id){
+        $contrato = contrato::findOrFail($id);
         $contrato->delete();
-        return redirect()->route('contratos.index')->with('mensaje','Contrato eliminado correctamente.');
+        return redirect()->route('contratos.index')->with('success', 'contrato eliminado correctamente');
+    }
+
+    public function mostrar(contrato $contrato){
+        return view('contratos.mostrar', compact('contrato'));
     }
 }

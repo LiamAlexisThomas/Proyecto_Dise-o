@@ -1,12 +1,8 @@
 @extends('plantilla')
 
-@section('titulo')
-    Clientes
-@endsection
+@section('titulo' , 'Clientes')
 
 @section('contenido')
-    <h3>Listado de clientes</h3>
-
     @if (session('mensaje'))
         <div>{{session('mensaje')}}</div>
         <br>
@@ -18,12 +14,12 @@
     <table border="1">
         <tr>
             <th>ID</th>
-            <th>NOMBRE</th>
+            <th>Nombre</th>
             <th>DNI</th>
-            <th>DIRECCION</th>
-            <th>TELEFONO</th>
-            <th>FECHA DE NACIMIENTO</th>
-            <th>ACCIONES</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Fecha de nacimiento</th>
+            <th>Acciones</th>
         </tr>
         @foreach ($clientes as $cliente)
             <tr>
@@ -34,11 +30,12 @@
                 <td>{{$cliente->telefono}}</td>
                 <td>{{$cliente->fechaNac}}</td>
                 <td>
-                    <a href="{{route('clientes.editar', $cliente)}}" class="btn btn-primary">Editar</a>
-                    <form action="{{route('clientes.eliminar', $cliente)}}" method="POST">
+                    <a href="{{ route('clientes.mostrar', $cliente->id) }}" class="btn btn-info">Ver</a>
+                    <a href="{{route('clientes.editar', $cliente->id)}}" class="btn btn-primary">Editar</a>
+                    <form action="{{ route('clientes.eliminar', $cliente->id) }}" method="POST" style="display: inline-block;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit">Borrar</button>
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este cliente?')">Eliminar</button>
                     </form>
                 </td>
             </tr>

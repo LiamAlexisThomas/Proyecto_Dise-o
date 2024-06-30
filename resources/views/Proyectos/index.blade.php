@@ -35,7 +35,15 @@
                 @endif
                 <td>{{$proyecto->fechaProy}}</td>
                 <td>{{$proyecto->lugar}}</td>
-                <td><a href="{{route('proyectos.editar', $proyecto)}}" class="btn btn-primary">Editar</a></td>
+                <td>
+                    <a href="{{ route('proyectos.mostrar', $proyecto->id) }}" class="btn btn-info">Ver</a>
+                    <a href="{{route('proyectos.editar', $proyecto->id)}}" class="btn btn-primary">Editar</a>
+                    <form action="{{ route('proyectos.eliminar', $proyecto->id) }}" method="POST" style="display: inline-block;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este material?')">Eliminar</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </table>

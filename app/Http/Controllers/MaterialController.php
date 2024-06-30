@@ -51,8 +51,14 @@ class MaterialController extends Controller
         return redirect()->route('materials.index')->with('mensaje', 'Material actualizado correctamente');
     }
 
-    public function eliminar(material $material){
+    public function eliminar($id){
+        $material = material::findOrFail($id);
+        $material->proyectos()->delete();
         $material->delete();
-        return redirect()->route('materials.index')->with('mensaje', 'Material eliminado correctamente');
+        return redirect()->route('materials.index')->with('success', 'material eliminado correctamente');
+    }
+
+    public function mostrar(material $material){
+        return view('materials.mostrar', compact('material'));
     }
 }

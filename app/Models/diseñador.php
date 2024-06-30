@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class diseñador extends Model
 {
+    public function contratos()
+    {
+        return $this->hasMany(proyecto::class, 'diseñador_id');
+    }
     use HasFactory;
 }

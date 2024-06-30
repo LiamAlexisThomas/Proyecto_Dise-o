@@ -9,7 +9,6 @@ class ProyectoController extends Controller
 {
     public function index(){
         $proyectos = proyecto::all();
-
         return view('proyectos.index', ['proyectos' => $proyectos]);
     }
 
@@ -54,8 +53,14 @@ class ProyectoController extends Controller
         return redirect()->route('proyectos.index')->with('mensaje', 'Proyecto actualizado correctamente');
     }
 
-    public function eliminar(proyecto $proyecto){
+    public function eliminar($id){
+        $proyecto = proyecto::findOrFail($id);
+        $proyecto->contratos()->delete();
         $proyecto->delete();
-        return redirect()->route('proyectos.index')->with('mensaje', 'Proyecto eliminado correctamente');
+        return redirect()->route('proyectos.index')->with('success', 'proyecto eliminado correctamente');
+    }
+
+    public function mostrar(proyecto $proyecto){
+        return view('proyectos.mostrar', compact('proyecto'));
     }
 }
