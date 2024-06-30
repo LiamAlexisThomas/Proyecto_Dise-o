@@ -125,7 +125,8 @@
         }
 
         form input[type="text"],
-        form input[type="email"],
+        form input[type="address"],
+        form input[type="date"],
         form textarea {
             width: calc(100% - 20px);
             padding: 0.4em;
@@ -209,7 +210,8 @@
             }
 
             form input[type="text"],
-            form input[type="email"],
+            form input[type="address"],
+            form input[type="date"],
             form textarea {
                 width: calc(100% - 10px);
             }

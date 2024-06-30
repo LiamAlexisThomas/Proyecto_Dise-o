@@ -3,15 +3,25 @@
 @section('titulo', 'Detalles del pago')
 
 @section('contenido')
-    <div class="card">
-        <div class="card-body">
-            <p class="card-title">{{ $pago->nombre }}</p>
-            <p class="card-text"><strong>Cuenta de pago:</strong> {{ $pago->cuentaPago }}</p>
-            <p class="card-text"><strong>Fecha limite:</strong> {{ $pago->fechaLim }}</p>
-            <p class="card-text"><strong>Monto:</strong> {{ $pago->monto }}</p>
-            <p class="card-text"><strong>Tipo:</strong> {{ $pago->tipo }}</p>
+    <header>
+        <h1>Gestión de pagos</h1>
+    </header>
+    <nav>
+        <a href="{{url('/pagos/index')}}">Volver</a>
+    </nav>
+    <main>
+        <h2>Detalles del pago</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="card-title">{{ $pago->nombre }}</p>
+                <p class="card-text"><strong>Cuenta de pago:</strong> {{ $pago->cuentaPago }}</p>
+                <p class="card-text"><strong>Fecha limite:</strong> {{ $pago->fechaLim }}</p>
+                <p class="card-text"><strong>Monto:</strong> {{ $pago->monto }}</p>
+                <p class="card-text"><strong>Tipo:</strong> {{ $pago->tipo }}</p>
+            </div>
         </div>
-    </div>
-
-    <a href="{{ route('pagos.index') }}" class="btn btn-secondary mt-3">Volver</a>
+    </main>
+    <footer>
+        <p>liamthomas@epet12smandes.edu.ar &copy; Todos los derechos reservados.</p>
+    </footer>
 @endsection
