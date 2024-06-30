@@ -5,11 +5,6 @@
 @endsection
 
 @section('contenido')
-    @if (session('mensaje'))
-        <div>{{session('mensaje')}}</div>
-        <br>
-    @endif
-
     <header>
         <h1>Gestión de contratos</h1>
     </header>

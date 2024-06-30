@@ -19,21 +19,37 @@
             <div class="form-group">
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" id="nombre" class="form-control" value="{{ old('nombre', isset($diseñador) ? $diseñador->nombre : '') }}" required>
+                @error('nombre')
+                    <small style="color: red">{{$message}}</small>
+                    <br>
+                @enderror
             </div>  
         
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" name="email" id="email" class="form-control" value="{{ old('email', isset($diseñador) ? $diseñador->email : '') }}" required>
+                @error('email')
+                    <small style="color: red">{{$message}}</small>
+                    <br>
+                @enderror
             </div>
         
             <div class="form-group">
                 <label for="telefono">Telefono</label>
                 <input type="text" name="telefono" id="telefono" class="form-control" value="{{ old('telefono', isset($diseñador) ? $diseñador->telefono : '') }}" required>
+                @error('telefono')
+                    <small style="color: red">{{$message}}</small>
+                    <br>
+                @enderror
             </div>
         
             <div class="form-group">
                 <label for="fechaNac">Fecha de nacimiento</label>
                 <input type="date" name="fechaNac" id="fechaNac" class="form-control" value="{{ old('fechaNac', isset($diseñador) ? $diseñador->fechaNac : '') }}" required>
+                @error('fechaNac')
+                    <small style="color: red">{{$message}}</small>
+                    <br>
+                @enderror
             </div>
             
             <button type="submit" class="btn btn-primary" style="margin-top: 20px">Guardar</button>

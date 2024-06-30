@@ -3,10 +3,6 @@
 @section('titulo' , 'Clientes')
 
 @section('contenido')
-    @if (session('mensaje'))
-        <div>{{session('mensaje')}}</div>
-        <br>
-    @endif
     <header>
         <h1>Gestión de clientes</h1>
     </header>

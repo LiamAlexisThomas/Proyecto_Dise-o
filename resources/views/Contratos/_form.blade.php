@@ -19,16 +19,28 @@
             <div class="form-group">
                 <label for="cliente_id">ID Cliente</label>
                 <input type="text" name="cliente_id" id="cliente_id" class="form-control" value="{{ old('cliente_id', isset($contrato) ? $contrato->cliente_id : '') }}" required>
+                @error('cliente_id')
+                    <small style="color: red">{{$message}}</small>
+                    <br>
+                @enderror
             </div>  
         
             <div class="form-group">
                 <label for="diseñador_id">ID Diseñador</label>
                 <input type="text" name="diseñador_id" id="diseñador_id" class="form-control" value="{{ old('diseñador_id', isset($contrato) ? $contrato->diseñador_id : '') }}" required>
+                @error('diseñador_id')
+                    <small style="color: red">{{$message}}</small>
+                    <br>
+                @enderror
             </div>
         
             <div class="form-group">
                 <label for="proyecto_id">ID Proyecto</label>
                 <input type="text" name="proyecto_id" id="proyecto_id" class="form-control" value="{{ old('proyecto_id', isset($contrato) ? $contrato->proyecto_id : '') }}" required>
+                @error('proyecto_id')
+                    <small style="color: red">{{$message}}</small>
+                    <br>
+                @enderror
             </div>
             
             <button type="submit" class="btn btn-primary" style="margin-top: 20px">Guardar</button>

@@ -19,21 +19,37 @@
             <div class="form-group">
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" id="nombre" class="form-control" value="{{ old('nombre', isset($material) ? $material->nombre : '') }}" required>
+                @error('nombre')
+                    <small style="color: red">{{$message}}</small>
+                    <br>
+                @enderror
             </div>  
         
             <div class="form-group">
                 <label for="descripcion">Descripcion</label>
                 <input type="text" name="descripcion" id="descripcion" class="form-control" value="{{ old('descripcion', isset($material) ? $material->descripcion : '') }}" required>
+                @error('descripcion')
+                    <small style="color: red">{{$message}}</small>
+                    <br>
+                @enderror
             </div>
         
             <div class="form-group">
                 <label for="cantidad">Cantidad</label>
                 <input type="text" name="cantidad" id="cantidad" class="form-control" value="{{ old('cantidad', isset($material) ? $material->cantidad : '') }}" required>
+                @error('cantidad')
+                    <small style="color: red">{{$message}}</small>
+                    <br>
+                @enderror
             </div>
         
             <div class="form-group">
                 <label for="precioUnid">Precio unidad</label>
                 <input type="text" name="precioUnid" id="precioUnid" class="form-control" value="{{ old('precioUnid', isset($material) ? $material->precioUnid : '') }}" required>
+                @error('precioUnid')
+                    <small style="color: red">{{$message}}</small>
+                    <br>
+                @enderror
             </div>
             
             <button type="submit" class="btn btn-primary" style="margin-top: 20px">Guardar</button>
