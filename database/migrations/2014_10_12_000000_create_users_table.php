@@ -21,8 +21,11 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('role',10)->default('user');
         });
     }
+
+
 
     /**
      * Reverse the migrations.
@@ -34,3 +37,4 @@ return new class extends Migration
         Schema::dropIfExists('users');
     }
 };
+

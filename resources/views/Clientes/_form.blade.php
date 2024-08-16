@@ -18,7 +18,7 @@
             @endisset
             <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" class="form-control" value="{{ old('nombre', isset($cliente) ? $cliente->nombre : '') }}" required>
+                <input type="text" name="nombre" id="nombre" class="form-control" value="{{ old('nombre', isset($cliente) ? $cliente->nombre : '') }}">
                 @error('nombre')
                     <small style="color: red">{{$message}}</small>
                     <br>
@@ -27,7 +27,7 @@
         
             <div class="form-group">
                 <label for="dni">DNI</label>
-                <input type="text" name="dni" id="dni" class="form-control" value="{{ old('dni', isset($cliente) ? $cliente->dni : '') }}" required>
+                <input type="text" name="dni" id="dni" class="form-control" value="{{ old('dni', isset($cliente) ? $cliente->dni : '') }}">
                 @error('dni')
                     <small style="color: red">{{$message}}</small>
                     <br>
@@ -36,7 +36,7 @@
         
             <div class="form-group">
                 <label for="direccion">Direccion</label>
-                <input type="address" name="direccion" id="direccion" class="form-control" value="{{ old('direccion', isset($cliente) ? $cliente->direccion : '') }}" required>
+                <input type="address" name="direccion" id="direccion" class="form-control" value="{{ old('direccion', isset($cliente) ? $cliente->direccion : '') }}">
                 @error('direccion')
                     <small style="color: red">{{$message}}</small>
                     <br>
@@ -45,7 +45,7 @@
         
             <div class="form-group">
                 <label for="telefono">Teléfono</label>
-                <input type="text" name="telefono" id="telefono" class="form-control" value="{{ old('telefono', isset($cliente) ? $cliente->telefono : '') }}" required>
+                <input type="text" name="telefono" id="telefono" class="form-control" value="{{ old('telefono', isset($cliente) ? $cliente->telefono : '') }}">
                 @error('telefono')
                     <small style="color: red">{{$message}}</small>
                     <br>
@@ -54,7 +54,7 @@
         
             <div class="form-group">
                 <label for="fechaNac">Fecha de nacimiento</label>
-                <input type="date" name="fechaNac" id="fechaNac" class="form-control" value="{{ old('fechaNac', isset($cliente) ? $cliente->fechaNac : '') }}" required>
+                <input type="date" name="fechaNac" id="fechaNac" class="form-control" value="{{ old('fechaNac', isset($cliente) ? $cliente->fechaNac : '') }}">
                 @error('fechaNac')
                     <small style="color: red">{{$message}}</small>
                     <br>

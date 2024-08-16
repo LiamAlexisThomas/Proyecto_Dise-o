@@ -10,6 +10,10 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    public function hasRole($role){
+        return $this->role === $role;
+    }
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -42,3 +46,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+

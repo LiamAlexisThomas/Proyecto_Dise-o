@@ -15,6 +15,16 @@
         <a href="{{url('/pagos/index')}}">Pagos</a>
         <a href="{{url('/proyectos/index')}}">Proyectos</a>
         <a href="{{url('/')}}">Principal</a>
+        @guest
+            <a class="nav-link {{ request()->routeIs('registro') ? 'active' : '' }}" aria-current="page" href="{{ route('registro') }}">Registro</a>
+            <a class="nav-link {{ request()->routeIs('login') ? 'active' : '' }}" href="{{ route('login') }}">Login</a>
+        @endguest
+        @auth
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button style="margin-top: 4px; width: 100px; background-color: #a67c52; font-weight: bold; font-family: 'Roboto', Arial, sans-serif; color: #f5f5dc">LogOut</button>
+            </form>
+        @endauth
     </nav>
     <main>
         <h2>Lista de diseñadores</h2>
